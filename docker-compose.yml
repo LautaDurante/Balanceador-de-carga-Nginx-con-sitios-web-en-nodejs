@@ -1,21 +1,21 @@
 version: '3'
 services:
-  app1:
+  web1:
     build:
       context: ./web1
       dockerfile: Dockerfile
     ports:
-      - "4000:3000"
+      - "8001:80"
 
-  app2:
+  web2:
     build:
       context: ./web2
       dockerfile: Dockerfile
     ports:
-      - "4001:3000"
+      - "8002:80"
 
   nginx:
-    image: nginx:latest
+    image: nginx:stable-alpine
     ports:
       - "8088:80"
     volumes:
